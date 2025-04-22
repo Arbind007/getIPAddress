@@ -6,7 +6,6 @@ const port = 3000;
 app.get('/', (req, res) => {
   // This handles proxies like Heroku or AWS ELB
   const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
-  
   res.send(`Your IP address is: ${ip}`);
 });
 
